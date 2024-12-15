@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+    <head>
+    <meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title %}交通違反計算ツール{% endblock title %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>交通違反計算ツール</h1>
+        </header>
+        <main>
+            {% block content %}
+            <!-- ここにコンテンツを追加 -->
+            {% endblock content %}
+        </main>
+        <footer>
+            <script src="/static/js/main.js"></script>
+            <p>&copy 2023 交通違反計算ツール</p>
+        </footer>
+    </body>
+    
+</html>

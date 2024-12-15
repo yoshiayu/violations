@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{%block title%}違反内容の選択{% endblock %}
+
+{%block content%}
+
+<form id="violation-form" method="post" action="/calculate/">
+    {% csrf_token %}
+    <label for="age-group">対象者:</label>
+    <select id="age-group" name="age_group">
+        <option value="adult">成人</option>
+        <option value="minor">未成年</option>
+    </select>
+
+    <label for="violations">違反内容:</label>
+    <select id="violations" name="violations" multiple>
+        {% for violation in violations %}
+        <option value="{{ violation.id }}">{{ violation.name }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">計算する</button>
+</form>
+<div id="result"></div>
+{%endblock%}
