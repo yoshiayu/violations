@@ -4,15 +4,14 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden;
     font-family: Arial, sans-serif;
 }
 
 header {
+    text-align: center;
     background-color: #292929;
     color: #fff;
     padding: 10px;
-    text-align: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -23,8 +22,8 @@ header {
 
 main {
     flex: 1;
-    margin-top: 60px; /* ヘッダーの高さに合わせて調整 */
-    margin-bottom: 40px; /* フッターの高さに合わせて調整 */
+    margin-top: 70px; /* ヘッダーの高さを確保 (ヘッダーのpaddingを含む) */
+    margin-bottom: 50px; /* フッターの高さを確保 */
     overflow-y: auto;
     padding: 20px;
     background-color: #fff;
@@ -66,10 +65,9 @@ footer {
 }
 
 form {
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
 }
-
-

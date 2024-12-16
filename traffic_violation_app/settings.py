@@ -123,3 +123,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # 必要に応じて
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 APPEND_SLASH = False
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"

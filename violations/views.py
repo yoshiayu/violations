@@ -1,10 +1,26 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from rest_framework import viewsets
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import User, Violations, ViolationSelection, Result
 from .serializers import User_serializer, ViolationsSerializer, ViolationSelectionSerializer, ResultSerializer
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+
+
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get("username")
+            messages.success(request, f"アカウント {username} が作成されました！ログインしてください。")
+            return redirect("login")
+    else:
+        form = UserCreationForm()
+    return render(request, "registration/register.html", {"form": form})
+
 def index(request):
     violations = Violations.objects.filter(age_group__in=[1, 3])  # デフォルトは成人 + 共通項目
     return render(request, 'violations/index.html', {
