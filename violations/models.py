@@ -14,7 +14,8 @@ class Violations(models.Model):
     fine_min = models.IntegerField()
     fine_max = models.IntegerField()
     punishment = models.TextField()
-    
+    age_group = models.CharField(max_length=10, choices=[('adult', '成人'), ('minor', '未成年')])  # 年齢区分を追加
+
     def __str__(self):
         return self.name
 
