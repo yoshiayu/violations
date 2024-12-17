@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -110,11 +110,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # 'static' フォルダをプロジェクト直下に作成
+    os.path.join(BASE_DIR, 'static'),  # プロジェクト直下のstaticフォルダ
+    os.path.join(BASE_DIR, 'violations/static'),  # violationsアプリ内のstaticフォルダ
 ]
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # 必要に応じて
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic時の出力先
+
 
 
 # Default primary key field type

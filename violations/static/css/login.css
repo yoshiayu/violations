@@ -1,0 +1,92 @@
+/* register.css & login.css */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: linear-gradient(135deg, #74ebd5, #acb6e5); */
+    font-family: 'montserrat', Arial, sans-serif;
+}
+
+.glass-container {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #444343;
+    margin-bottom: 20px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #252424;
+    outline: none;
+}
+
+form input::placeholder {
+    color: #595757;
+}
+
+/* ボタンのスタイル */
+button {
+    color: #333333; /* 文字の色を濃く */
+    border: 1px solid #666; /* 枠線を少し濃く */
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    background: none; /* 背景色なし */
+}
+
+button:hover {
+    border-color: #444; /* ホバー時の枠線をさらに濃く */
+}
+
+p {
+    color: #ffdf00;
+    font-size: 0.9em;
+}
+
+a {
+    color: #ffdf00;
+    text-decoration: none;
+}
+
+/* エラーメッセージのスタイル */
+/* エラーメッセージのスタイル */
+small {
+    color: #333333; /* 濃いグレー */
+    font-weight: bold; /* 文字を太字に */
+    font-size: 1rem; /* 適度な大きさ */
+    display: block;
+    margin-top: 5px;
+}
+
+/* 入力フィールドのスタイル */
+input[type="text"], input[type="password"] {
+    width: 330px;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333333; /* 文字の色を濃く */
+    border: 1px solid #aaa; /* 少し濃い枠線 */
+    border-radius: 5px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #666; /* フォーカス時の枠線を濃く */
+    outline: none;
+}

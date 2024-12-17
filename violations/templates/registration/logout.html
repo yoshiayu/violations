@@ -1,6 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}ログアウト{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/logout.css' %}">
+{% endblock %}
 
 {% block content %}
 <p>ログアウトしました。</p>

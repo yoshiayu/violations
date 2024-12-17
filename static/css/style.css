@@ -8,17 +8,54 @@ body {
 }
 
 header {
-    text-align: center;
-    background-color: #292929;
-    color: #fff;
-    padding: 10px;
+    display: flex; /* ヘッダーをフレックスボックス化 */
+    justify-content: center; /* 子要素を中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 80px;
     z-index: 1000;
+    background-color: #292929;
+    color: #fff;
+    padding: 10px;
     border-bottom: 1px solid #ddd;
 }
+
+header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* 完全な中央揃え */
+    margin: 0;
+}
+
+
+header nav {
+    position: absolute;
+    right: 100px; /* 右端に配置 */
+    display: flex;
+    align-items: flex-end; /* 右端で揃える */
+    gap: 15px; /* 縦の間隔をさらに広げる */
+}
+
+
+header nav a, header nav p {
+    display: block; /* 縦に並べる */
+    margin: 5px 0; /* 上下に5pxの余白を追加 */
+    color: #fff; /* 文字色を白に */
+    text-decoration: none; /* リンクの下線を削除 */
+    line-height: 1.5; /* 行の高さを調整 */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0; /* 不要なマージンを削除 */
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
 
 main {
     flex: 1;
@@ -42,7 +79,7 @@ select, button {
 }
 
 footer {
-    background-color: #f4f4f4;
+    background-color: #292929;
     padding: 10px;
     text-align: center;
     position: fixed;
@@ -51,6 +88,10 @@ footer {
     width: 100%;
     z-index: 1000;
     border-top: 1px solid #ddd;
+}
+
+footer p {
+    color: #fff;
 }
 
 #violation-selections {
